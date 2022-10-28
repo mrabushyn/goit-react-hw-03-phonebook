@@ -23,12 +23,11 @@ export class Phonebook extends Component {
   };
 
   componentDidMount = () => {
-     const savedContacts = localStorage.getItem('CONTACTS');
+    const savedContacts = localStorage.getItem('CONTACTS');
     const parsedContacts = JSON.parse(savedContacts);
     if (parsedContacts) {
       this.setState({ contacts: parsedContacts })
     }
-    // return
   }
 
   formSubmitHandler = data => {
