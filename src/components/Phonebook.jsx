@@ -16,6 +16,18 @@ export class Phonebook extends Component {
     filter: '',
   };
 
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem('CONTACTS', JSON.stringify(this.state.contacts));
+    }
+  };
+
+  componentDidMount = () => {
+     const savedContacts = localStorage.getItem('CONTACTS');
+    const parsedContacts = JSON.parse(savedContacts);
+    this.setState( {contacts: parsedContacts})
+  }
+
   formSubmitHandler = data => {
     const { name, number } = data;
     const normalizedSameName = name.toLowerCase();
@@ -36,17 +48,6 @@ export class Phonebook extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
-
-  // componentDidMount = () => {
-  //    const savedContacts = localStorage.getItem('CONTACTS');
-  //   const parsedContacts = JSON.parse(savedContacts);
-  //   this.setState( {contacts: parsedContacts})
-  // }
-  // componentDidUpdate = (prevProps, prevState) => {
-  //   if (prevState.contacts !== this.state.contacts) {
-  //     localStorage.setItem('CONTACTS', JSON.stringify(this.state.contacts));
-  //   }
-  // };
 
   render() {
     const { contacts, filter } = this.state;
