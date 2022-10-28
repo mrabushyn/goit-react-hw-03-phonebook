@@ -1,0 +1,61 @@
+body {
+  background-color: rgba(1, 131, 44, 0.226);
+}
+
+.phonebookContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  color: #010101;
+}
+
+.labelField {
+  display: block;
+}
+
+.inputField {
+  display: block;
+  width: 200px;
+  height: 35px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.formContainer {
+  border: 1px solid;
+}
+
+.formField {
+  width: 400px;
+  margin: 15px;
+  margin-left: 15px;
+  
+}
+
+.btnStyle {
+  display: block;
+  width: 150px;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: rgb(230, 237, 243);
+
+}
+
+.delBtnStyle {
+margin-left: 15px;
+  width: 65px;
+  height: 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: rgb(230, 237, 243);
+
+}
+
+.contactList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
